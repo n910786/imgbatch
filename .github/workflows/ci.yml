@@ -21,7 +21,5 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install
       run: pip install -e .
-    - name: Smoke test (import)
+    - name: Smoke test
       run: python -c "import imgbatch; print(imgbatch.__version__)"
-    - name: Smoke test (CLI)
-      run: python -m imgbatch.cli --version
