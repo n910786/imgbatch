@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imgbatch"
+version = "0.1.0"
+description = "Batch image processing CLI: cutout, convert, resize"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [{name = "n910786"}]
+keywords = ["image", "batch", "cutout", "convert", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Graphics",
+]
+
+dependencies = [
+    "click>=8.0",
+    "Pillow>=10.0",
+    "numpy>=1.24",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+ai = ["rembg>=2.0"]
+
+[project.scripts]
+imgbatch = "imgbatch.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["imgbatch*"]
